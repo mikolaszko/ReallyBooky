@@ -10,14 +10,13 @@ const router = express.Router();
 export const getBooks = async (req, res) => { 
     try {
         const bookData = await BookData.find();
-                
         res.status(200).json(bookData);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
 }
 
-export const getPost = async (req, res) => { 
+export const getBook = async (req, res) => { 
     const { id } = req.params;
 
     try {
@@ -29,7 +28,7 @@ export const getPost = async (req, res) => {
     }
 }
 
-export const createPost = async (req, res) => {
+export const createBook = async (req, res) => {
     const { title, author, genre, selectedFile } = req.body;
 
     const newBook = new BookData({ title, author, genre, selectedFile })
