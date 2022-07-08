@@ -14,7 +14,7 @@ app.use(cors());
 app.use('/home', bookRoutes)
 
 const CONNECTION_URL = 'mongodb+srv://mikolaszko:OXcfzsMdq8S3s2uC@cluster0.df0ifiz.mongodb.net/?retryWrites=true&w=majority'
-const PORT = process.env.PORT|| 3000;
+const PORT = process.env.PORT|| 3001;
 
 
 mongoose.connect(CONNECTION_URL)

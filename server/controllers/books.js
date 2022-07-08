@@ -11,11 +11,11 @@ export const addBook = async (req, res) => {
     const {title, author, genre, tags} = req.body
 
     const newBook = new BookData(req.body)
-
+    console.log(newBook)
     try {
         await newBook.save();
 
-        res.status(201).json(newBook );
+        res.status(201).json(newBook);
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
