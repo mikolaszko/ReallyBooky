@@ -7,6 +7,6 @@ const bookSchema = mongoose.Schema({
     selectedFile: String
 })
 
-let BookData = mongoose.model('bookData', bookSchema)
+let BookData = mongoose.model('BookData', bookSchema)
 
 export default BookData

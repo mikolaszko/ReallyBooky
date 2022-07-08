@@ -7,6 +7,20 @@ console.log(BookData)
 
 const router = express.Router();
 
+export const addBook = async (req, res) => {
+    const {title, author, genre, tags} = req.body
+
+    const newBook = new BookData(req.body)
+
+    try {
+        await newBook.save();
+
+        res.status(201).json(newBook );
+    } catch (error) {
+        res.status(409).json({ message: error.message });
+    }
+}
+
 export const getBooks = async (req, res) => { 
     try {
         const bookData = await BookData.find();
@@ -28,19 +42,6 @@ export const getBook = async (req, res) => {
     }
 }
 
-export const createBook = async (req, res) => {
-    const { title, author, genre, selectedFile } = req.body;
-
-    const newBook = new BookData({ title, author, genre, selectedFile })
-
-    try {
-        await newBook.save();
-
-        res.status(201).json(newBook );
-    } catch (error) {
-        res.status(409).json({ message: error.message });
-    }
-}
 
 // export const updatePost = async (req, res) => {
 //     const { id } = req.params;
