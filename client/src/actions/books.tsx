@@ -1,10 +1,11 @@
 import {FETCH_ALL, CREATE, UPDATE, DELETE, LIKE } from '../constants/actionTypes'
 
 import * as api from '../api/index.js'
+import { Dispatch } from 'redux';
 
-export const getBooks = () => async (dispatch) => {
+export const getBooks = () => async (dispatch: Dispatch) => {
     try {
-      const { data } = await api.getBooks();
+      const { data } = await api.getBook();
   
       dispatch({ type: FETCH_ALL, payload: data });
     } catch (error) {
@@ -12,7 +13,7 @@ export const getBooks = () => async (dispatch) => {
     }
   };
   
-  export const addBook = (book) => async (dispatch) => {
+  export const addBook = (book: object) => async (dispatch: Dispatch) => {
     try {
       const { data } = await api.addBook(book);
   

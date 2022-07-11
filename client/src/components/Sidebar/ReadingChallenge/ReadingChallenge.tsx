@@ -1,4 +1,6 @@
 import React from 'react'
+import {useAppDispatch, useAppSelector} from '../../../app/hooks'
+import { incremented, amountAdded } from '../../../features/counter/counterSlice'
 
 //MUI imports
 
@@ -7,26 +9,16 @@ import LinearProgress from '@mui/material/LinearProgress'
 
 function ReadingChallenge() {
 
-    const [progress, setProgress] = React.useState(0);
-
-    React.useEffect(() => {
-        const timer = setInterval(() => {
-        setProgress((oldProgress) => {
-            
-            const diff = Math.random() * 0;
-            return Math.min(oldProgress + diff, 100);
-        });
-        }, 500);
-
-        return () => {
-        clearInterval(timer);
-        };
-    }, []);
-
     const currentDay= new Date()
     const currentYear= currentDay.getFullYear()
 
+    const count = useAppSelector((state) => state.counter.value);
     
+    const dispatch = useAppDispatch();
+
+    function handleClick(){
+        dispatch(amountAdded(3))
+    }
 
   return (
     <section className='reading-challenge-section'>
@@ -35,8 +27,11 @@ function ReadingChallenge() {
         <Box sx={{ width: '10%' }}>
             <LinearProgress variant="determinate" value='50' />
         </Box>
-        
-
+        <p>
+            <button onClick={handleClick}>
+                count is: {count}
+            </button>
+        </p>
     </section>
   )
 }
