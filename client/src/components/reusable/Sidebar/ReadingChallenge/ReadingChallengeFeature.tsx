@@ -1,6 +1,6 @@
 import React from 'react'
-import {useAppDispatch, useAppSelector} from '../../../app/hooks'
-import { incremented, amountAdded } from '../../../features/counter/counterSlice'
+import {useAppDispatch, useAppSelector} from '../../../../app/hooks'
+import { incremented, amountAdded } from '../../../../features/counter/counterSlice'
 
 //MUI imports
 

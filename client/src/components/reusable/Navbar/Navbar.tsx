@@ -21,8 +21,8 @@ function Navbar() {
               className='nav-left-stack'
               >
                   <a className='logo links' href="/">Logo</a>
-                  <a href='/home' className='links'>Home</a>
-                  <a href='/mybooks' className='links'>My books</a>
+                  <a href='/' className='links'>Home</a>
+                  <a href='/challenge' className='links'>Reading Challenge</a>
                   <a href='/community' className='links'>Community</a>
             </Stack>
           </div>

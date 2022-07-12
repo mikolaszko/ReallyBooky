@@ -1,7 +1,7 @@
 import React from 'react'
 import './Sidebar.scss'
 
-import ReadingChallenge from './ReadingChallenge/ReadingChallenge'
+import ReadingChallenge from './ReadingChallenge/ReadingChallengeFeature'
 import Friends from './Friends/Friends'
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../Navbar/Navbar'
-import Sidebar from '../Sidebar/Sidebar'
+import Navbar from '../reusable/Navbar/Navbar'
+import Sidebar from '../reusable/Sidebar/Sidebar'
 
 function HomePage() {
   return (
